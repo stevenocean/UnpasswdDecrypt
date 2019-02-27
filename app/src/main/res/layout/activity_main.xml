@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/gen_key_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="generateKey"
+        android:text="Generate Key"/>
+
+    <EditText
+        android:id="@+id/plain_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gen_key_btn"
+        android:layout_marginTop="16dp"
+        android:hint="Input plain text"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/encrypt_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/plain_et"
+        android:layout_marginTop="16dp"
+        android:onClick="encryptData"
+        android:text="Fingerprint and Encrypt"/>
+
+    <TextView
+        android:id="@+id/encrypted_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/encrypt_btn"
+        android:hint="This will display encrypted content with Base64."
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/decrypt_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/encrypted_tv"
+        android:layout_marginTop="16dp"
+        android:onClick="decryptWithFingerprint"
+        android:text="Fingerprint and Decrypt"/>
+
+    <TextView
+        android:id="@+id/decrypted_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/decrypt_btn"
+        android:hint="This will display decrypted content."
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"/>
+
+</android.support.constraint.ConstraintLayout>
